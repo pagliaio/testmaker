@@ -846,7 +846,7 @@ def copy_selected_items():
             clear_entry_widgets()
             
             # Copy task description to task_description_entry
-            task_description_entry.insert(tk.END, exercise.get('TASK_DESCRIPTION', '') + '\n\n')
+            task_description_entry.insert(tk.END, exercise.get('TASK_DESCRIPTION', ''))
             
             # Copy sentences to sentences_entry
             sentences = exercise.get('SENTENCES', [])
@@ -856,7 +856,7 @@ def copy_selected_items():
             # Copy fill in the blank words to fitb_entry
             fill_in_the_blank_words = exercise.get('FILL_IN_THE_BLANK_WORDS', [])
             if fill_in_the_blank_words:
-                fitb_entry.insert(tk.END, ', '.join(fill_in_the_blank_words) + '\n\n')
+                fitb_entry.insert(tk.END, ', '.join(fill_in_the_blank_words))
             
             # Copy multiple choice options to multiple_choice_answers_entry
             multiple_choice_options = exercise.get('MULTIPLE_CHOICE_OPTIONS', [])
@@ -866,7 +866,7 @@ def copy_selected_items():
             # Copy reading text to reading_text_entry
             reading_text = exercise.get('READING_TEXT', '')
             if reading_text:
-                reading_test_entry.insert(tk.END, f'{reading_text}\n\n')
+                reading_test_entry.insert(tk.END, f'{reading_text}')
 
             # Set the value of the global tk.IntVar variable for multiple_choice_options_value
             multiple_choice_options_value.set(exercise.get('MULTIPLE_CHOICE_OPTIONS_VALUE', 0))
