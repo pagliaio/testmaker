@@ -117,11 +117,13 @@ def add_flexible_exercise(document, exercise, exercise_index):
                 selected_sentences = sentences[:sentences_per_student]
                 for sentence in selected_sentences:
                     document.add_paragraph(sentence, style=list_style)
-                    document.add_paragraph(underscore_line, style='Normal')
+                    for _ in range(exercise['underscore_lines']):
+                        document.add_paragraph("_" * 100, style='Normal')
             else:
                 for sentence in sentences:
                     document.add_paragraph(sentence, style=list_style)
-                    document.add_paragraph(underscore_line, style='Normal')
+                    for _ in range(exercise['underscore_lines']):
+                        document.add_paragraph("_" * 100, style='Normal')
                     
                     
         # Check for multiple-choice questions if multiple_choice_option_number > 0
