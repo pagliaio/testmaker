@@ -188,7 +188,7 @@ def add_flexible_exercise(document, exercise, exercise_index):
                         document.add_paragraph("\n\t\t" + truestring +")\t" + falsestring + ")", style='Normal')
             # if mcon is 2 (greater than 1), it's a multiple choice type of exercise. if it's 3, it's a mathcing exercise, therefore no sentences,
             # therefore we need an external "if" condition, separatedfrom the greater "hassentences" if
-            elif exercise['multiple_choice_option_number'] > 1 and not mcoptions:
+            else:
                 if exercise['avoid_repetitions'] ==1:
                     indices = list(range(len(sentences)))
                     random.shuffle(indices)
@@ -720,12 +720,12 @@ multiple_choice_options_frame = tk.Frame (exercise_frame, width=20, height=100, 
 multiple_choice_options_frame.grid(row=4, column=1, padx=5, pady=5, sticky="ew") 
 multiple_choice_options_value = tk.IntVar()
 multiple_choice_options_value.set(0)
-multiple_choice_options_radio_button2 = tk.Radiobutton(multiple_choice_options_frame, text="None", variable=multiple_choice_options_value, value=0, bg="lawngreen")
-multiple_choice_options_radio_button2.grid(row=0, column=0, padx=5, pady=5, sticky='ew')
+multiple_choice_options_radio_button0 = tk.Radiobutton(multiple_choice_options_frame, text="None", variable=multiple_choice_options_value, value=0, bg="lawngreen")
+multiple_choice_options_radio_button0.grid(row=0, column=0, padx=5, pady=5, sticky='ew')
 
-multiple_choice_options_radio_button2 = tk.Radiobutton(multiple_choice_options_frame, text="True/False", variable=multiple_choice_options_value, value=1, bg="lawngreen")
-multiple_choice_options_radio_button2.grid(row=1, column=0, padx=5, pady=5, sticky='ew')
-CreateToolTip(multiple_choice_options_radio_button2, text = 'Adds a True/False selection after each sentence.\n'
+multiple_choice_options_radio_button1 = tk.Radiobutton(multiple_choice_options_frame, text="True/False", variable=multiple_choice_options_value, value=1, bg="lawngreen")
+multiple_choice_options_radio_button1.grid(row=1, column=0, padx=5, pady=5, sticky='ew')
+CreateToolTip(multiple_choice_options_radio_button1, text = 'Adds a True/False selection after each sentence.\n'
               'There is no need to add them manually. Sentences\nare required.')
 
 multiple_choice_options_radio_button2 = tk.Radiobutton(multiple_choice_options_frame, text="Multiple choice", variable=multiple_choice_options_value, value=2, bg="lawngreen")
@@ -733,9 +733,9 @@ multiple_choice_options_radio_button2.grid(row=1, column=1, padx=5, pady=5, stic
 CreateToolTip(multiple_choice_options_radio_button2, text = 'Adds a multiple choice selection after each sentence. '
               'The options\nmust be written in the green box, separated by commas, one set\nof answers per line. This option also works with a text to read and\nno sentences.')
 
-multiple_choice_options_radio_button2 = tk.Radiobutton(multiple_choice_options_frame, text="Matching words", variable=multiple_choice_options_value, value=3, bg="lawngreen")
-multiple_choice_options_radio_button2.grid(row=0, column=1, padx=5, pady=5, sticky='ew')
-CreateToolTip(multiple_choice_options_radio_button2, text = 'The words will appear in scrambled columns, so that students may link them.')
+multiple_choice_options_radio_button3 = tk.Radiobutton(multiple_choice_options_frame, text="Matching words", variable=multiple_choice_options_value, value=3, bg="lawngreen")
+multiple_choice_options_radio_button3.grid(row=0, column=1, padx=5, pady=5, sticky='ew')
+CreateToolTip(multiple_choice_options_radio_button3, text = 'The words will appear in scrambled columns, so that students may link them.')
 
 
 scramble_mc_checkbox_value = tk.IntVar()
