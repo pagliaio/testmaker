@@ -586,7 +586,7 @@ scramble_checkbox_value.set(1)
 
 scramble_checkbox = tk.Checkbutton(create_frame, text="Scramble", variable=scramble_checkbox_value, anchor="e", bg="lightcoral")
 scramble_checkbox.grid(row=3, column=0, padx=5, pady=5, sticky='ew')
-CreateToolTip(scramble_checkbox, text = 'Each student will have a their sentences in a scrambled order.\nWorks with Sentences, True/False, Multiple Choice,\nFill in the Blanks, and Matching Words exercises')
+CreateToolTip(scramble_checkbox, text = 'Each student will have a their sentences in a scrambled order. Works with\nSentences, True/False, Multiple Choice, and Fill in the Blanks exercises. It\nis always enabled with Matching Words exercises.')
 
 
 
